@@ -17,18 +17,23 @@ const LANG_COLORS: Record<string, string> = {
   Python: "#3572a5",
   Rust: "#ce4a09",
   Go: "#00aed8",
+  Markdown: "#083fa1",
 };
 
 const PROJECTS = [
-  { id: 1, name: "commerce-tool", desc: "Full-stack e-commerce platform with Stripe payments, inventory management, and real-time dashboard", tags: ["React", "Node.js", "Postgres", "Stripe"], status: "running", updated: "2 min ago", lang: "TypeScript", size: "2.4 MB", files: 128, commits: 47 },
-  { id: 2, name: "auth-gateway", desc: "JWT + OAuth2 authentication service with rate limiting, refresh tokens, and multi-provider support", tags: ["Express", "Redis", "JWT", "OAuth2"], status: "running", updated: "1 hr ago", lang: "TypeScript", size: "840 KB", files: 62, commits: 23 },
-  { id: 3, name: "analytics-dash", desc: "Realtime analytics dashboard with WebSockets, custom metrics, and automated reporting", tags: ["Next.js", "Recharts", "Prisma", "Socket.io"], status: "stopped", updated: "3 hr ago", lang: "TypeScript", size: "3.1 MB", files: 215, commits: 89 },
-  { id: 4, name: "ml-pipeline", desc: "AI inference pipeline with self-healing loops, queue management, and distributed processing", tags: ["FastAPI", "Celery", "Redis", "PyTorch"], status: "running", updated: "Yesterday", lang: "Python", size: "1.8 MB", files: 94, commits: 31 },
-  { id: 5, name: "cms-headless", desc: "Headless CMS API with rich text editor, media upload, versioning, and webhook support", tags: ["Strapi", "PostgreSQL", "S3", "GraphQL"], status: "stopped", updated: "2 days ago", lang: "JavaScript", size: "5.2 MB", files: 347, commits: 156 },
-  { id: 6, name: "chat-realtime", desc: "WebSocket chat application with rooms, presence indicators, message reactions, and file sharing", tags: ["Socket.io", "React", "MongoDB", "Redis"], status: "running", updated: "3 days ago", lang: "TypeScript", size: "1.6 MB", files: 88, commits: 42 },
-  { id: 7, name: "task-automator", desc: "Browser automation toolkit for scraping, form filling, and end-to-end workflow testing", tags: ["Playwright", "Node.js", "SQLite"], status: "stopped", updated: "5 days ago", lang: "TypeScript", size: "920 KB", files: 55, commits: 18 },
-  { id: 8, name: "api-gateway", desc: "Microservices API gateway with routing, load balancing, auth middleware, and rate limiting", tags: ["Nginx", "Node.js", "Redis", "Prometheus"], status: "stopped", updated: "1 week ago", lang: "TypeScript", size: "740 KB", files: 48, commits: 27 },
+  { id: 1, name: "riks-pages", desc: "Trang GitHub Pages trung tâm để gom tài liệu, discussion và demo của hệ sinh thái Riks/AuRen/SandboxCode.", tags: ["Pages", "Docs", "Hub", "GitHub"], status: "running", updated: "ecosystem hub", lang: "TypeScript", size: "Hub", files: 1, commits: 1, url: "https://github.com/clauderiks/riks-pages" },
+  { id: 2, name: "auren-os", desc: "Lớp hệ điều hành/không gian làm việc AuRen, đóng vai trò nền tảng để các app và agent dùng chung một trải nghiệm.", tags: ["AuRen", "OS", "Workspace", "Platform"], status: "running", updated: "core platform", lang: "TypeScript", size: "Core", files: 1, commits: 1, url: "https://github.com/clauderiks/auren-os" },
+  { id: 3, name: "SandboxCode", desc: "Kho sandbox chính cho code, thử nghiệm IDE và các luồng chạy an toàn trong cùng một hệ sinh thái.", tags: ["Sandbox", "Code", "IDE", "Runtime"], status: "running", updated: "sandbox core", lang: "TypeScript", size: "Core", files: 1, commits: 1, url: "https://github.com/clauderiks/SandboxCode" },
+  { id: 4, name: "riks", desc: "Kho Riks gốc, giữ các ý tưởng nền, thành phần dùng chung và định danh cho toàn bộ bộ dự án.", tags: ["Riks", "Core", "Shared", "Identity"], status: "running", updated: "shared base", lang: "TypeScript", size: "Base", files: 1, commits: 1, url: "https://github.com/clauderiks/riks" },
+  { id: 5, name: "clauderiks repositories", desc: "Trang tổng hợp tất cả repository thuộc tài khoản clauderiks để theo dõi toàn bộ nhánh dự án như một workspace thống nhất.", tags: ["GitHub", "Repositories", "Overview"], status: "running", updated: "account index", lang: "JavaScript", size: "Index", files: 1, commits: 1, url: "https://github.com/clauderiks?tab=repositories" },
+  { id: 6, name: "SandboxCode-auren", desc: "Tổ chức GitHub riêng cho các module SandboxCode/AuRen, dùng để gom những repo liên quan về cùng một namespace.", tags: ["Org", "SandboxCode", "AuRen"], status: "running", updated: "org namespace", lang: "TypeScript", size: "Org", files: 1, commits: 1, url: "https://github.com/SandboxCode-auren" },
+  { id: 7, name: "SandboxCodeX-IDE", desc: "Biến thể IDE của SandboxCodeX, tập trung vào giao diện lập trình, chạy thử và trải nghiệm phát triển hợp nhất.", tags: ["IDE", "SandboxCodeX", "Editor"], status: "running", updated: "IDE branch", lang: "TypeScript", size: "IDE", files: 1, commits: 1, url: "https://github.com/clauderiks/SandboxCodeX-IDE" },
+  { id: 8, name: "SandboxCodeX-v1", desc: "Phiên bản v1 của SandboxCodeX để lưu mốc phát triển, prototype và các quyết định kiến trúc ban đầu.", tags: ["v1", "Prototype", "SandboxCodeX"], status: "stopped", updated: "version archive", lang: "TypeScript", size: "v1", files: 1, commits: 1, url: "https://github.com/Huynhthuong2505/SandboxCodeX-v1" },
+  { id: 9, name: "SandboxCodex", desc: "Kho SandboxCodex liên quan đến hướng agent/code assistant, bổ sung cho SandboxCodeX trong cùng một bộ sản phẩm.", tags: ["Codex", "Agent", "Sandbox"], status: "running", updated: "agent track", lang: "TypeScript", size: "Agent", files: 1, commits: 1, url: "https://github.com/Huynhthuong2505/SandboxCodex" },
+  { id: 10, name: "Discussion #35", desc: "Thread thảo luận dùng để nối yêu cầu, ảnh mockup và bối cảnh triển khai giữa các repository trong hệ sinh thái.", tags: ["Discussion", "Planning", "Mockups"], status: "running", updated: "discussion", lang: "Markdown", size: "Thread", files: 1, commits: 1, url: "https://github.com/clauderiks/riks-pages/discussions/35" },
 ];
+
+type Project = (typeof PROJECTS)[0];
 
 function DownloadIcon() {
   return (
@@ -50,13 +55,13 @@ export default function ProjectsPage() {
     return matchSearch && matchFilter;
   });
 
-  function handleDownload(proj: typeof PROJECTS[0]) {
+  function handleDownload(proj: Project) {
     setDownloading(proj.id);
     setTimeout(() => {
       setDownloading(null);
       setDownloaded(prev => new Set([...prev, proj.id]));
       // Simulate file download
-      const blob = new Blob([`# ${proj.name}\n\n${proj.desc}\n\nTags: ${proj.tags.join(", ")}\nLanguage: ${proj.lang}\nFiles: ${proj.files}\nSize: ${proj.size}\n`], { type: "application/zip" });
+      const blob = new Blob([`# ${proj.name}\n\n${proj.desc}\n\nTags: ${proj.tags.join(", ")}\nLanguage: ${proj.lang}\nLink: ${proj.url}\n`], { type: "application/zip" });
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
@@ -97,7 +102,7 @@ export default function ProjectsPage() {
             <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: 6, flexWrap: "wrap", gap: 10 }}>
               <div>
                 <h1 style={{ fontSize: "clamp(1.3rem,3vw,1.9rem)", fontWeight: 700, color: "#fff", letterSpacing: "-0.02em", marginBottom: 4 }}>Dự án của tôi</h1>
-                <p style={{ fontSize: 13, color: MUTED }}>Quản lý và tải xuống các dự án của bạn dưới dạng file ZIP.</p>
+                <p style={{ fontSize: 13, color: MUTED }}>Tất cả repo Riks, AuRen và SandboxCode được gom lại như một hệ sinh thái duy nhất.</p>
               </div>
               <button style={{ display: "flex", alignItems: "center", gap: 6, padding: "9px 16px", borderRadius: 8, border: "none", backgroundColor: ACCENT, color: BG, fontSize: 12, fontWeight: 700, cursor: "pointer", fontFamily: "inherit" }}>
                 + Dự án mới
@@ -163,9 +168,9 @@ export default function ProjectsPage() {
                         {/* Meta */}
                         <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
                           {[
-                            { icon: "📁", val: `${proj.files} files` },
+                            { icon: "🔗", val: "GitHub" },
                             { icon: "💾", val: proj.size },
-                            { icon: "⌥", val: `${proj.commits} commits` },
+                            { icon: "⌥", val: `${proj.commits} node` },
                             { icon: "🕐", val: proj.updated },
                           ].map(m => (
                             <span key={m.val} style={{ fontSize: 10, color: DIMMED, display: "flex", alignItems: "center", gap: 4 }}>
@@ -186,6 +191,10 @@ export default function ProjectsPage() {
                         )}
                         {isDl ? "Đang tải..." : isDone ? "Đã tải" : "Tải ZIP"}
                       </button>
+                      <a href={proj.url} target="_blank" rel="noreferrer" className="dl-btn"
+                        style={{ flexShrink: 0, display: "flex", alignItems: "center", gap: 6, padding: "9px 14px", borderRadius: 7, border: `1px solid ${BORDER}`, backgroundColor: "transparent", color: ACCENT, fontSize: 12, cursor: "pointer", fontFamily: "inherit", whiteSpace: "nowrap", transition: "all 0.15s", textDecoration: "none" }}>
+                        Mở GitHub ↗
+                      </a>
                     </div>
                   </div>
                 );
