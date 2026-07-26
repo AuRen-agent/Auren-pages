@@ -1,0 +1,83 @@
+{
+  "name": "auren-ecosystem-root",
+  "description": "Repo tổng điều phối Riks, AuRen, SandboxCode và SandboxCodeX như một hệ sinh thái thống nhất.",
+  "defaultBranch": "main",
+  "syncPolicy": {
+    "mode": "linked-development",
+    "principle": "Mọi thay đổi ở repo tổng phải ghi rõ repo con bị ảnh hưởng để các repo liên quan được cập nhật đồng bộ.",
+    "requiredChecks": ["typecheck", "build"],
+    "releaseRule": "Một release của repo tổng cần kèm changelog cho từng repo con trong projects[]."
+  },
+  "projects": [
+    {
+      "id": "riks-pages",
+      "name": "riks-pages",
+      "role": "Public documentation, GitHub Pages hub, discussions and mockups",
+      "owner": "clauderiks",
+      "url": "https://github.com/clauderiks/riks-pages",
+      "branch": "main",
+      "syncGroup": "web-hub",
+      "commands": { "status": "git status --short", "typecheck": "pnpm run typecheck", "build": "pnpm run build" }
+    },
+    {
+      "id": "auren-os",
+      "name": "auren-os",
+      "role": "AuRen operating/workspace layer shared by apps and agents",
+      "owner": "clauderiks",
+      "url": "https://github.com/clauderiks/auren-os",
+      "branch": "main",
+      "syncGroup": "core-platform",
+      "commands": { "status": "git status --short", "typecheck": "pnpm run typecheck", "build": "pnpm run build" }
+    },
+    {
+      "id": "sandboxcode",
+      "name": "SandboxCode",
+      "role": "Sandbox runtime and safe code execution experiments",
+      "owner": "clauderiks",
+      "url": "https://github.com/clauderiks/SandboxCode",
+      "branch": "main",
+      "syncGroup": "sandbox-runtime",
+      "commands": { "status": "git status --short", "typecheck": "pnpm run typecheck", "build": "pnpm run build" }
+    },
+    {
+      "id": "riks",
+      "name": "riks",
+      "role": "Base identity, shared ideas and common components for the ecosystem",
+      "owner": "clauderiks",
+      "url": "https://github.com/clauderiks/riks",
+      "branch": "main",
+      "syncGroup": "core-platform",
+      "commands": { "status": "git status --short", "typecheck": "pnpm run typecheck", "build": "pnpm run build" }
+    },
+    {
+      "id": "sandboxcodex-ide",
+      "name": "SandboxCodeX-IDE",
+      "role": "IDE surface for SandboxCodeX development and testing",
+      "owner": "clauderiks",
+      "url": "https://github.com/clauderiks/SandboxCodeX-IDE",
+      "branch": "main",
+      "syncGroup": "ide",
+      "commands": { "status": "git status --short", "typecheck": "pnpm run typecheck", "build": "pnpm run build" }
+    },
+    {
+      "id": "sandboxcodex-v1",
+      "name": "SandboxCodeX-v1",
+      "role": "Versioned prototype/archive for SandboxCodeX v1 decisions",
+      "owner": "Huynhthuong2505",
+      "url": "https://github.com/Huynhthuong2505/SandboxCodeX-v1",
+      "branch": "main",
+      "syncGroup": "ide",
+      "commands": { "status": "git status --short", "typecheck": "pnpm run typecheck", "build": "pnpm run build" }
+    },
+    {
+      "id": "sandboxcodex",
+      "name": "SandboxCodex",
+      "role": "Agent/code-assistant track that complements SandboxCodeX",
+      "owner": "Huynhthuong2505",
+      "url": "https://github.com/Huynhthuong2505/SandboxCodex",
+      "branch": "main",
+      "syncGroup": "agent",
+      "commands": { "status": "git status --short", "typecheck": "pnpm run typecheck", "build": "pnpm run build" }
+    }
+  ]
+}
